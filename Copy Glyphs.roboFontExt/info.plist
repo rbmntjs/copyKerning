@@ -6,17 +6,17 @@
 	<array>
 		<dict>
 			<key>path</key>
-			<string>copy_glyphs.py</string>
+			<string>copy_kerning.py</string>
 			<key>preferredName</key>
-			<string>Copy Glyphs</string>
+			<string>Copy Kerning</string>
 			<key>shortKey</key>
 			<string></string>
 		</dict>
 	</array>
 	<key>developer</key>
-	<string>Ben Kiel</string>
+	<string>Rob Mientjes</string>
 	<key>developerURL</key>
-	<string>http://www.typefounding.com</string>
+	<string>http://tinytype.co</string>
 	<key>html</key>
 	<false/>
 	<key>launchAtStartUp</key>
@@ -24,17 +24,17 @@
 	<key>mainScript</key>
 	<string></string>
 	<key>name</key>
-	<string>Copy Glyphs</string>
+	<string>Copy Kerning</string>
 	<key>timeStamp</key>
-	<real>1404228959.091691</real>
+	<real>1605050000.000000</real>
 	<key>version</key>
-	<string>1.1</string>
+	<string>1.0</string>
 	<key>com.robofontmechanic.Mechanic</key>
         <dict>
 	    <key>repository</key>
-	    <string>Typefounding/copyGlyphs</string>
+	    <string>rbmntjs/copyKerning</string>
 	    <key>summary</key>
-            <string>Copies the selected glyphs from one open font to other open font(s).</string>
+            <string>Copies the kerning and groups from one open font to one or more open fonts. Pretty much directly cloned from Typefounding/copyGlyphs, by Ben Kiel.</string>
         </dict>
 </dict>
 </plist>
