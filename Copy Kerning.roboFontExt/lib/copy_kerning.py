@@ -30,7 +30,7 @@ class CopyKerning:
         self._updateDest()
         ## open the window
         self.w.open()
-    
+
     def _updateDest(self):
         des = list(self.sourceFontList)
         des.remove(self.source_font)
@@ -40,6 +40,8 @@ class CopyKerning:
         kerning = source_font.kerning.asDict()
         groups = source_font.groups
         for font in destination_fonts:
+            font.groups.clear()
+            font.kerning.clear()
             font.groups.update(groups)
             font.kerning.update(kerning)
 
