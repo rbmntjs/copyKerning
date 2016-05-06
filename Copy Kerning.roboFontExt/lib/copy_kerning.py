@@ -1,5 +1,4 @@
-from vanilla import ColorWell, Button, HorizontalLine, Window, CheckBox, PopUpButton, TextBox, Sheet, ProgressBar
-from defconAppKit.controls.glyphCollectionView import GlyphCollectionView
+from vanilla import Button, HorizontalLine, Window, PopUpButton, TextBox, Sheet, ProgressBar
 from defconAppKit.controls.fontList import FontList
 from mojo.roboFont import OpenWindow, AllFonts, RGroups, RKerning
 
@@ -11,8 +10,6 @@ class CopyKerning:
             message("No fonts open.", "Open or create a font to copy data to and fro.")
             return
 
-        self.doMarkGlyphs = 0
-        self.doOverwrite = 1
         self.sourceFontList = AllFonts()
         self.destinationFontList = AllFonts()
         self.source_font = self.sourceFontList[0]
@@ -27,7 +24,7 @@ class CopyKerning:
         self.w.desTitle = TextBox((15, 76, 200, 20), "Destination Fonts:")
         self.w.destinationFonts = FontList((15, 96, -15, -115), self.destinationFontList, selectionCallback=self.desCallback)
         self.w.copyButton = Button((-215, -40, 200, 20), 'Copy Groups & Kerning', callback=self.copyCallback)
-        self.w.line = HorizontalLine((10, -50, -10, 1))
+        self.w.line = HorizontalLine((10, -60, -10, 1))
         self._updateDest()
         ## open the window
         self.w.open()
