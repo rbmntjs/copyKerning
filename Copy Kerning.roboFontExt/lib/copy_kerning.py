@@ -1,4 +1,5 @@
-from vanilla import Button, HorizontalLine, Window, PopUpButton, TextBox, Sheet, ProgressBar
+from vanilla import ColorWell, Button, HorizontalLine, Window, CheckBox, PopUpButton, TextBox, Sheet, ProgressBar
+from defconAppKit.controls.glyphCollectionView import GlyphCollectionView
 from defconAppKit.controls.fontList import FontList
 from mojo.roboFont import OpenWindow, AllFonts, RGroups, RKerning
 
@@ -20,11 +21,11 @@ class CopyKerning:
         self.kerning = None
 
         ## create a window
-        self.w = Window((700, 400), "Copy Groups and Kerning", minSize=(700, 500))
+        self.w = Window((400, 500), "Copy Groups and Kerning", minSize=(500, 600))
         self.w.sourceTitle = TextBox((15, 20, 200, 20), "Source Font:")
-        self.w.sourceFont = PopUpButton((15, 42, -410, 20), [f.info.familyName + ' ' + f.info.styleName for f in self.sourceFontList], callback=self.sourceCallback)
-        self.w.desTitle = TextBox((-400, 20, 200, 20), "Destination Fonts:")
-        self.w.destinationFonts = FontList((-400, 42, -15, -115), self.destinationFontList, selectionCallback=self.desCallback)
+        self.w.sourceFont = PopUpButton((15, 42, 340, 20), [f.info.familyName + ' ' + f.info.styleName for f in self.sourceFontList], callback=self.sourceCallback)
+        self.w.desTitle = TextBox((15, 76, 200, 20), "Destination Fonts:")
+        self.w.destinationFonts = FontList((15, 96, -15, -115), self.destinationFontList, selectionCallback=self.desCallback)
         self.w.copyButton = Button((-215, -40, 200, 20), 'Copy Groups & Kerning', callback=self.copyCallback)
         self.w.line = HorizontalLine((10, -50, -10, 1))
         self._updateDest()
@@ -40,8 +41,6 @@ class CopyKerning:
         kerning = source_font.kerning.asDict()
         groups = source_font.groups
         for font in destination_fonts:
-            font.groups.clear()
-            font.kerning.clear()
             font.groups.update(groups)
             font.kerning.update(kerning)
 
